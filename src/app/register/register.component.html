@@ -1,0 +1,51 @@
+
+<div class="container col-xl-6">
+<form [formGroup]="registerForm">
+    <h2>Register</h2>
+    <div class="form-group">
+        <input type="text" formControlName="username" placeholder="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        
+        <input type="password" formControlName="password"  placeholder="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+         <input type="text" formControlName="name" placeholder="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+       
+        <input type="text" formControlName="email" placeholder="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.email">Please enter a valid email address</div>
+        </div>
+    </div>
+    <div class="form-group">
+       
+        <input type="text" formControlName="address" placeholder="Address"  class="form-control"  />
+    </div>
+
+    <div class="form-group">
+        <label for="email"> Want to be Member</label>
+        <input type="checkbox" formControlName="member" class="example-margin"   />
+    </div>
+
+    
+    <div class="form-group">
+            <p>  
+        <button (click)="registerUser()">Register</button>
+        <a [routerLink]="['/sign-in']" class="btn btn-link">Cancel</a>
+    </p>   
+    </div>
+
+</form>
+</div>

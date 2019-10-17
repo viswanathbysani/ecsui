@@ -1,0 +1,59 @@
+<html>
+<body >   
+
+<div class="row" >
+                <div class="col-sm-3">
+                        </div>
+                       
+                <div class="col-xl-6">
+                        <p></p>
+    <input type="text" #box placeholder="Search" class="form-control" (keyup.enter)=onEnter(box.value) />
+    <p></p>
+    </div>
+</div>  
+                        
+<div class="container-fluid row ">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-xl-7">
+                <h1 class="text-center" >Products</h1>
+                <table class="table table-striped">
+                        <thead>
+                        <th >Name</th>
+                        <th >Description</th>
+                        <th >Price</th>
+                        <th>Select</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let product of products">
+                        
+                        <td>{{product.name}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td> <input type="checkbox" value={{product.id}} (click)=click($event) /> </td>
+                        <td><button type="button" class="btn btn-outline-secondary"
+                                 value="{{product.id}}" (click)="editProduct($event)" >
+                                Edit Product</button></td>
+                        </tr>
+                        </tbody>
+                </table>
+        </div>
+</div>       
+<div class="row">
+     <div class="col-sm-3">
+     </div>
+    <div class="col">
+        <div class= "row">
+           <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-primary" [routerLink]="['../add-product']">Add Product</button>
+           </div>    
+        <div class="col">
+                <button type="button" class="btn btn-outline-primary" (click)="addToCart()" >Add to Cart</button>  
+          </div>                
+        </div>
+     </div>
+ </div>
+
+</body>
+</html>

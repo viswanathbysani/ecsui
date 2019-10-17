@@ -1,0 +1,49 @@
+
+<div class="container col-xl-6">   
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+        <h2>Add Product</h2>
+        <p></p>
+        <div class="form-group">
+            <input type="text" formControlName="name" placeholder="Name" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="description"  placeholder="Description" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Description is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+             <input type="text" formControlName="price" placeholder="Price" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+            <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                <div *ngIf="f.price.errors.required">Price is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="orderThreshhold" placeholder="Order Threshhold" 
+            class="form-control"  />
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="stock" placeholder="Stock"  class="form-control"  />
+        </div>
+    
+        <div class="form-check-inline">
+            <label for="stopOrder"> Stop Order</label>
+            <input type="checkbox" formControlName="stopOrder" class="example-margin"   />
+        </div>
+    
+        
+        <div >
+
+            <button type="submit" class="btn btn-primary" >Submit</button>
+            <button type="button" class="btn btn-secondary" [routerLink]="['../home']">Cancel</button>
+        </div>
+    
+
+    </form>
+</div>
