@@ -1,0 +1,25 @@
+<div class="container-fluid row ">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-xl-7">
+            <h1 class="text-center" >Selected Products</h1>
+            <table class="table table-striped">
+                    <thead>
+                    <th >Name</th>
+                    <th >Description</th>
+                    <th >Price</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let product of selectedProducts">
+                    
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.price}}</td>
+                    </tr>
+                    </tbody>
+            </table>
+    </div>
+    <div class="col-xl-7">
+        <p> Total : {{total}}</p>
+    </div>
+</div>

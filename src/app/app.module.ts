@@ -13,6 +13,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MaterialModule } from './material.module';
     HomeComponent,
     RegisterComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    CheckoutOrderComponent
   ],
   imports: [
     BrowserModule,

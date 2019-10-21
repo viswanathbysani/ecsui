@@ -3,6 +3,7 @@ import { InventoryService } from '../inventory.service';
 import { Product } from '../models/product';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AppsessionService } from '../appsession.service';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
   products:Product[];
-  selectedProducts : Array<string>;
+  selectedProducts:Product[];
 
   constructor(private invertoryService: InventoryService,
               private router:Router,
-              private snackBar:MatSnackBar) { }
+              private snackBar:MatSnackBar,
+              private sessionService:AppsessionService) { }
 
   ngOnInit() {
+  
     this.selectedProducts =[];
     this.displayProducts();
 
@@ -46,12 +49,19 @@ export class HomeComponent implements OnInit {
   {
     if (e.target.checked)
     {
-      this.selectedProducts.push(e.target.value);
+      for (var i=0; i<this.products.length; i++)
+      {
+        if (this.products[i].id == e.target.value)
+        {
+          this.selectedProducts.push(this.products[i]);
+        }
+      }
+      
     }
     else
     {
       for( var i = 0; i < this.selectedProducts.length; i++){ 
-        if ( this.selectedProducts[i] === e.target.value) {
+        if ( this.selectedProducts[i].id === e.target.value) {
           this.selectedProducts.splice(i, 1); 
         }
      }
@@ -74,6 +84,7 @@ export class HomeComponent implements OnInit {
     if (this.selectedProducts.length > 0)
     {
       this.snackBar.open("Items are successfully added to cart","Ok");
+      this.sessionService.selectedProducts = this.selectedProducts;
     }
     else
     {

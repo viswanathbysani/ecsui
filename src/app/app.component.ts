@@ -29,4 +29,9 @@ export class AppComponent {
     localStorage.removeItem('currentuser');
     this.router.navigate(['home']);
   }
+
+  checkOutOrder()
+  {
+    this.router.navigate([])
+  }
 }
