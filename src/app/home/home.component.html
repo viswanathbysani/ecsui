@@ -48,7 +48,7 @@
            <div *ngIf="isManager">
               <button type="button" class="btn btn-outline-primary" [routerLink]="['../add-product']">Add Product</button>
            </div> 
-           <div >
+           <div *ngIf="isManager">
                 <button type="button" class="btn btn-outline-primary" [routerLink]="['../add-promotion']">Add Promotion</button>
              </div>    
         <div class="col">
