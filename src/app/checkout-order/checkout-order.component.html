@@ -2,7 +2,7 @@
     <div class="col-sm-3">
     </div>
     <div class="col-xl-7">
-            <h1 class="text-center" >Selected Products</h1>
+            <h1 class="text-center" >Order Overview</h1>
             <table class="table table-striped">
                     <thead>
                     <th >Name</th>
@@ -16,10 +16,31 @@
                     <td>{{product.description}}</td>
                     <td>{{product.price}}</td>
                     </tr>
+                    
                     </tbody>
             </table>
     </div>
-    <div class="col-xl-7">
-        <p> Total : {{total}}</p>
+    
+    <div class="col-xl-9">
+        <p style="text-align:right;" > Total : {{total}}</p>
     </div>
+  
+    <div class="container col-xl-6">  
+            <p></p>
+            <p></p>
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+        <input type="text" formControlName="promoCode" placeholder="Promotion" />
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="cardNo" placeholder="Card Number" size="16"  />
+    </div>
+    <div >
+
+        <button type="submit" class="btn btn-primary" >Complete Order</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['../home']">Cancel</button>
+    </div>
+    </form>
+    </div>
+      
 </div>

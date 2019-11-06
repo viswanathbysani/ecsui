@@ -32,7 +32,7 @@
                         <td>{{product.description}}</td>
                         <td>{{product.price}}</td>
                         <td> <input type="checkbox" value={{product.id}} (click)=click($event) /> </td>
-                        <td><button type="button" class="btn btn-outline-secondary"
+                        <td *ngIf="isManager"><button type="button" class="btn btn-outline-secondary"
                                  value="{{product.id}}" (click)="editProduct($event)" >
                                 Edit Product</button></td>
                         </tr>
@@ -45,9 +45,12 @@
      </div>
     <div class="col">
         <div class= "row">
-           <div class="col-sm-6">
+           <div *ngIf="isManager">
               <button type="button" class="btn btn-outline-primary" [routerLink]="['../add-product']">Add Product</button>
-           </div>    
+           </div> 
+           <div >
+                <button type="button" class="btn btn-outline-primary" [routerLink]="['../add-promotion']">Add Promotion</button>
+             </div>    
         <div class="col">
                 <button type="button" class="btn btn-outline-primary" (click)="addToCart()" >Add to Cart</button>  
           </div>                

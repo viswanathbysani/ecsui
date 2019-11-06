@@ -14,6 +14,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
+import { AddPromotionComponent } from './add-promotion/add-promotion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CheckoutOrderComponent } from './checkout-order/checkout-order.componen
     RegisterComponent,
     AddProductComponent,
     EditProductComponent,
-    CheckoutOrderComponent
+    CheckoutOrderComponent,
+    AddPromotionComponent
   ],
   imports: [
     BrowserModule,

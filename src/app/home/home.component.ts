@@ -13,6 +13,7 @@ import { AppsessionService } from '../appsession.service';
 export class HomeComponent implements OnInit {
   products:Product[];
   selectedProducts:Product[];
+  isManager:boolean;
 
   constructor(private invertoryService: InventoryService,
               private router:Router,
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   
     this.selectedProducts =[];
+    this.isManager = this.sessionService.isManager;
     this.displayProducts();
 
   }

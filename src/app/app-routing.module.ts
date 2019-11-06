@@ -7,6 +7,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
+import { AddPromotionComponent } from './add-promotion/add-promotion.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path:'checkout',
     component:CheckoutOrderComponent
+  },
+  {
+    path:'add-promotion',
+    component:AddPromotionComponent
   }
 ];
 

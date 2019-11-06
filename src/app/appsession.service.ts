@@ -7,6 +7,8 @@ import { Product } from './models/product';
 })
 export class AppsessionService {
   selectedProducts : Product[];
+  isManager : boolean;
+  userName : string;
 
   constructor() { }
 }

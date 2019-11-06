@@ -1,0 +1,36 @@
+
+<div class="container col-xl-6">   
+    <form [formGroup]="promotionForm" (ngSubmit)="onSubmit()" >
+            <h2>Add Promotion</h2>
+            <p></p>
+            <div class="form-group">
+                <input type="text" formControlName="code" placeholder="Promotion Code" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.code.errors }" />
+                <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+                    <div *ngIf="f.code.errors.required">Promotion Code is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="discountPercentage"  placeholder="Discount Percentage" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.discountPercentage.errors }" />
+                <div *ngIf="submitted && f.discountPercentage.errors" class="invalid-feedback">
+                    <div *ngIf="f.discountPercentage.errors.required">Discount Percentage is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                 <input type="text" formControlName="expirationDate" placeholder="Expiration Date" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.expirationDate.errors }" />
+                <div *ngIf="submitted && f.expirationDate.errors" class="invalid-feedback">
+                    <div *ngIf="f.expirationDate.errors.required">Expiration Date is required</div>
+                </div>
+            </div>
+    
+            <div >
+
+                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="button" class="btn btn-secondary" [routerLink]="['../home']">Cancel</button>
+            </div>
+        
+    
+        </form>
+    </div>
